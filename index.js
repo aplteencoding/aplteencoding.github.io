@@ -8,7 +8,7 @@ var current_dog_pair = null
 var dogs = []
 var loading = true;
 
-var DOG_DATA_URL = 'dog_names.json?$limit=8000'
+var DOG_DATA_URL = 'dog_names.json'
 //var DOG_DATA_URL = 'https://data.muni.org/resource/r849-w2cw.json?$limit=8000'
 /*  Dog data as an array of objects:
     [{"name": "FIDO", "count": "30"}, {"name": ...]
