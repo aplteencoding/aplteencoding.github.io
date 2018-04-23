@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html class="loading">
+    <head>
+        <title>Arlington Dog Name Game</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <link href="styles.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Life+Savers:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+        <style>
+            .choose_mode #play,
+            .choose_mode #round,
+            .choose_mode #results,
+            .choose_mode #final_results { display: none }
+            .choose_mode #choose_mode { display: block }
+
+            .play #play,
+            .play #round { display: block }
+            .play #results,
+            .play #final_results,
+            .play #choose_mode { display: none }
+
+            .results #play,
+            .results #choose_mode,
+            .results #final_results { display: none }
+            .results #round,
+            .results #results{ display: block }
+
+            .final_results #play,
+            .final_results #round,
+            .final_results #choose_mode,
+            .final_results #results { display: none }
+            .final_results #final_results{ display: block }
+        </style>
+<!--        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-56999250-1', 'auto');
+            ga('send', 'pageview');
+
+        </script> -->
+    </head>
+    <body class="choose_mode">
+
+        <div id="main">
+            <div id="title-block">
+                <h3>Arlington<br>Edition</h3>
+                <h1>Dog Name <span class="undertuck">Game</span></h1>
+            </div>
+            <div id="loading"><img src="resources/runningDog.gif"> <br />Loading Dogs</div>
+            <noscript>Sorry, the dog name game requires javascript</noscript>
+            <div id="choose_mode">
+                <button class="dog-with-chubby-cheeks" onclick="chooseMode(false)">Easy Mode</button>
+                <button class="angry-bulldog-face" onclick="chooseMode(true)">Hard Mode</button>
+            </div>
+
+            <div id="round">
+                <h2 id="roundNumber"></h2>
+            </div>
+
+            <div id="play">
+                <h2>Which name is more popular for Arlington dogs?</h2>
+                <button onclick="nameChosen(this.innerText)"></button>
+                <button onclick="nameChosen(this.innerText)"></button>
+            </div>
+
+            <div id="results">
+                <div id="gameNav" onclick="nextButton()">
+                    <span id="result"></span><span id="next">Next &#187;</span>
+                </div>
+                <div id="counts">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+
+            <div id="final_results">
+                <h2></h2>
+                <!-- <p><a id="twitter-link" target="_blank">Share on Twitter</a></p>
+                <p><a id="facebook-link" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//codeforanchorage.org/dog-name-game/" target="_blank">Share on Facebook</a></p>
+-->
+                <p><a id="adoptapet-link" href="http://www.arlington-tx.gov/animals/adoptions/" target="_blank">Adopt a Pet</a></p>
+                <p><a id="register-link" href="http://www.arlington-tx.gov/animals/animal-license-registration/" target="_blank">License/Renew your dog to get in the game</a></p>
+                <button class="prize-badge-with-paw-print" onclick="initialize()">Play Again</button>
+            </div>
+
+            <script src="dogs.js"></script>
+            <script src="dogIconClasses.js"></script>
+            <script src="index.js"></script>
+        </div>
+
+        <div id="footer">This project is based on <a href="http://codeforanchorage.org">Code for Anchorage's</a> Dog Name Game</div>
+
+    </body>
+</html>
